@@ -1,0 +1,159 @@
+:root{
+    --primary-color: #0410D8;
+    --secondary-color: #1b3593;
+    --over-secondary-color: #FBFBF9;
+    --tertiary-color: #FF9D18;
+    --over-tertiary-color: #030303;
+
+    --background-color: #E0EAF3;
+    --text-over-background: #030303;
+
+    --dot-color: #106FFC;
+    --thumb-color: #0665A9;
+    --card-bg-color: #FBFBF9;
+    --completed-color: #089708;
+    --box-shadow-card: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    --box-shadow-portfolio: rgb(16, 111, 252, 0.4) 5px 5px, rgb(16, 111, 252, 0.3) 10px 10px, rgb(16, 111, 252, 0.2) 15px 15px, rgb(16, 111, 252, 0.1) 20px 20px, rgb(16, 111, 252, 0.05) 25px 25px;
+}
+[data-theme="dark"] 
+{
+    --primary-color: #810CA8;
+    --secondary-color: #2D033B;
+    --over-secondary-color: #FBFBF9;
+    --tertiary-color: #FF9D18;
+    --over-tertiary-color: #030303;
+
+    --background-color: #030303; /* Dark background */
+    --text-over-background: #E0EAF3; /* Light text for contrast */
+
+    --dot-color: #2D033B;
+    --thumb-color: #C147E9;
+    --card-bg-color: #810CA8;
+    --completed-color: #089708;
+    --box-shadow-card: rgba(191, 32, 206, 0.2) 5px 5px, rgba(191, 32, 206, 0.1) 10px 10px, rgba(191, 32, 206, 0.05) 15px 15px;
+    --box-shadow-portfolio: rgb(45, 3, 59, 0.4) 5px 5px, rgb(45, 3, 59, 0.3) 10px 10px, rgb(45, 3, 59, 0.2) 15px 15px, rgb(45, 3, 59, 0.1) 20px 20px, rgb(45, 3, 59, 0.05) 25px 25px;
+}
+
+/* PORTFOLIO------------------------------------------------------------ */
+.programming_projects, .illustration_projects, .ddd_projects
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 2rem;
+}
+.programming_project, .illustration_project, .ddd_project
+{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.project_image
+{
+    flex: 8;
+}
+.project_image img
+{
+    width: 100%;
+    border-radius: 25px;
+    border-left: 1px solid var(--dot-color);
+    border-top: 1px solid var(--dot-color);
+    box-shadow: var(--box-shadow-portfolio);
+}
+.project_description
+{
+    flex: 10;
+}
+.project_description h2
+{
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+.project_description h3
+{
+    font-size: 1.2rem;
+    margin: .5rem 0;
+}
+.project_description p
+{
+    font-size: 1rem;
+}
+.project_description .status
+{
+    color: var(--completed-color);
+    display: inline-block;
+    font-size: 1rem;
+    font-style: italic;
+    text-decoration: none;
+    transition: all .5s ease-in;
+}
+.project_description .technology-list
+{
+    color: var(--primary-color);
+    display: inline-block;
+    font-size: 1rem;
+}
+.project_description .technology-list .infobulle
+{
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    transition: all .5s ease-in;
+}
+.project_description .technology-list .infobulle .tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: var(--over-secondary-color);
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.project_description .technology-list .infobulle:hover .tooltip {
+    display: block;
+}
+/* End of Portfolio----------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    
+    .programming_projects, .illustration_projects, .ddd_projects
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    .programming_projects h1, .illustration_projects h1, .ddd_projects h1
+    {
+        margin-bottom: 0;
+    }
+    .programming_project, .illustration_project, .ddd_project
+    {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 1rem;
+    }
+    .project_image img
+    {
+        border-radius: 15px;
+        border: 1px solid var(--dot-color);
+    }
+    .project_description
+    {
+        margin-top: 1rem;
+    }
+}
